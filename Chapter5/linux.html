@@ -410,7 +410,7 @@
                 <a href="../Chapter6/">
             
                     
-                    第六章：搭建Q&A
+                    第六章：Q&A
             
                 </a>
             
@@ -424,7 +424,7 @@
                 <a href="../Chapter6/q1.html">
             
                     
-                    问题一
+                    6.1:搭建Q&A
             
                 </a>
             
@@ -437,7 +437,7 @@
                 <a href="../Chapter6/q2.html">
             
                     
-                    问题二
+                    6.2: 使用Q&A
             
                 </a>
             
@@ -496,7 +496,23 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="52-linux&#x64CD;&#x4F5C;">5.2: linux&#x64CD;&#x4F5C;</h1>
+<h4 id="&#x67E5;&#x770B;">&#x67E5;&#x770B;</h4>
+<pre><code># &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6302;&#x8F7D;&#x60C5;&#x51B5;
+df -h
+</code></pre><h4 id="&#x67E5;&#x627E;">&#x67E5;&#x627E;</h4>
+<p>&#x200B;    &#x4E00;&#x822C;&#x7528;grep&#xFF0C;&#x7528;&#x6CD5;&#x4E5F;&#x6BD4;&#x8F83;&#x591A;</p>
+<pre><code>grep -r xxxxxx /usr/WebPortal 
+grep -rnw . -e FAMILY_TOKEN
+</code></pre><p>&#x6302;&#x8F7D;</p>
+<pre><code># &#x67E5;&#x770B;&#x8BBE;&#x5907;
+fdisk -l
 
+# &#x628A;&#x8BBE;&#x5907;sde1&#x6302;&#x8F7D;&#x6210;/mnt/&#x76EE;&#x5F55;
+sudo mount /dev/sde1 /mnt/dlwsdata4
+
+# &#x628A;storage&#x4E0B;&#x7684;&#x67D0;&#x4E2A;&#x76EE;&#x5F55;&#x6302;&#x8F7D;&#x5230;/tmp/&#x76EE;&#x5F55;
+sudo mount zjlab-storage:/mnt/dlwsdata /tmp/zjlab-storage
+</code></pre>
                                 
                                 </section>
                             
@@ -528,7 +544,7 @@
                 </a>
                 
                 
-                <a href="../Chapter6/" class="navigation navigation-next " aria-label="Next page: 第六章：搭建Q&A">
+                <a href="../Chapter6/" class="navigation navigation-next " aria-label="Next page: 第六章：Q&A">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -539,7 +555,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.2: linux操作","level":"1.6.2","depth":2,"next":{"title":"第六章：搭建Q&A","level":"1.7","depth":1,"path":"Chapter6/README.md","ref":"Chapter6/README.md","articles":[{"title":"问题一","level":"1.7.1","depth":2,"path":"Chapter6/q1.md","ref":"Chapter6/q1.md","articles":[]},{"title":"问题二","level":"1.7.2","depth":2,"path":"Chapter6/q2.md","ref":"Chapter6/q2.md","articles":[]}]},"previous":{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"path":"Chapter5/k8s.md","ref":"Chapter5/k8s.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/linux.md","mtime":"2019-06-20T11:26:42.716Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T08:31:46.644Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.2: linux操作","level":"1.6.2","depth":2,"next":{"title":"第六章：Q&A","level":"1.7","depth":1,"path":"Chapter6/README.md","ref":"Chapter6/README.md","articles":[{"title":"6.1:搭建Q&A","level":"1.7.1","depth":2,"path":"Chapter6/q1.md","ref":"Chapter6/q1.md","articles":[]},{"title":"6.2: 使用Q&A","level":"1.7.2","depth":2,"path":"Chapter6/q2.md","ref":"Chapter6/q2.md","articles":[]}]},"previous":{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"path":"Chapter5/k8s.md","ref":"Chapter5/k8s.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/linux.md","mtime":"2019-06-24T10:01:41.074Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T12:21:13.489Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -410,7 +410,7 @@
                 <a href="../Chapter6/">
             
                     
-                    第六章：搭建Q&A
+                    第六章：Q&A
             
                 </a>
             
@@ -424,7 +424,7 @@
                 <a href="../Chapter6/q1.html">
             
                     
-                    问题一
+                    6.1:搭建Q&A
             
                 </a>
             
@@ -437,7 +437,7 @@
                 <a href="../Chapter6/q2.html">
             
                     
-                    问题二
+                    6.2: 使用Q&A
             
                 </a>
             
@@ -496,7 +496,35 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="51-k8s&#x64CD;&#x4F5C;">5.1: k8s&#x64CD;&#x4F5C;</h1>
+<p>&#x53EF;&#x4EE5;&#x5728;dev machine&#x4E0A;&#x8FDB;&#x884C;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;k8s&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code># &#x67E5;&#x770B;kube-system&#x7684;namespace&#x4E0B;&#x7684;pods
+./deploy.py kubectl get pods -n kube-system
 
+# &#x67E5;&#x770B;pods
+./deploy.py kubectl get pods
+
+# &#x67E5;&#x770B;daemonsets
+./deploy.py kubectl get daemonsets
+
+# &#x67E5;&#x770B;nodes
+./deploy.py kubectl get nodes
+
+# verbose&#x53C2;&#x6570;&#x7528;&#x6765;&#x6253;&#x5370;&#x5B8C;&#x6210;&#x7684;
+./deploy.py --verbose kubectl get nodes
+
+# &#x67E5;&#x770B;&#x4E00;&#x4E2A;pod
+/deploy.py kubectl describe pod collectd-node-agent-2vz68
+
+# &#x67E5;&#x770B;&#x4E00;&#x4E2A;pod&#x7684;&#x65E5;&#x5FD7;
+./deploy.py kubectl log pod collectd-node-agent-2vz68
+
+# &#x8FDB;&#x5165;&#x4E00;&#x4E2A;pod
+./deploy.py kubectl exec -ti collectd-node-agent-2vz68 /bin/bash
+
+# k8s&#x542F;&#x505C;&#x670D;&#x52A1;
+./deploy.py kubernetes stop jobmanager
+./deploy.py kubernetes start jobmanager
+</code></pre>
                                 
                                 </section>
                             
@@ -539,7 +567,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"next":{"title":"5.2: linux操作","level":"1.6.2","depth":2,"path":"Chapter5/linux.md","ref":"Chapter5/linux.md","articles":[]},"previous":{"title":"第五章：运维日常","level":"1.6","depth":1,"path":"Chapter5/README.md","ref":"Chapter5/README.md","articles":[{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"path":"Chapter5/k8s.md","ref":"Chapter5/k8s.md","articles":[]},{"title":"5.2: linux操作","level":"1.6.2","depth":2,"path":"Chapter5/linux.md","ref":"Chapter5/linux.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/k8s.md","mtime":"2019-06-20T11:26:42.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T08:31:46.644Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"next":{"title":"5.2: linux操作","level":"1.6.2","depth":2,"path":"Chapter5/linux.md","ref":"Chapter5/linux.md","articles":[]},"previous":{"title":"第五章：运维日常","level":"1.6","depth":1,"path":"Chapter5/README.md","ref":"Chapter5/README.md","articles":[{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"path":"Chapter5/k8s.md","ref":"Chapter5/k8s.md","articles":[]},{"title":"5.2: linux操作","level":"1.6.2","depth":2,"path":"Chapter5/linux.md","ref":"Chapter5/linux.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/k8s.md","mtime":"2019-06-24T09:58:43.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-24T12:21:13.489Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
