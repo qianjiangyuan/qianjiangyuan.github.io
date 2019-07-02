@@ -1,4 +1,6 @@
 # 4.1: 框架
 
-![../images/frame.png](D:\gitbooks\QianJiangYuan-Doc\images\frame.png)
+#### 整体框架
+
+![../images/frame.png](..\images\frame.png)
 

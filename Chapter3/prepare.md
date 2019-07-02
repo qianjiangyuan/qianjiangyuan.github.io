@@ -38,7 +38,7 @@ proxy 节点，起webui等服务。
 
 #### 6. 拉取代码
 
-确定开发目录，拉去代码
+确定开发目录，拉取代码
 
 ```
 git clone https://github.com/zhejianglab/QianJiangYuan.git

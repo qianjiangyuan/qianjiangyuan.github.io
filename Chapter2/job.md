@@ -9,7 +9,7 @@
 - job name， job的名称，可自定义。
 - job type，可以分为regular job和distributed job。
 - number of GPUs，申请的gpu使用数目。
-- docker Image, 和job template是一一对应的，比如选择pytorch-bert，会选择qianjiangyuan/algorithm-bert:1.7的镜像，里面会安装pytorch所需的依赖，使用docker可以省去配置开发环境的麻烦。
+- Docker Image, 和job template是一一对应的，比如选择pytorch-bert，会选择qianjiangyuan/algorithm-bert:1.7的镜像，里面会安装pytorch所需的依赖，使用Docker可以省去配置开发环境的麻烦。
 - command， 模块选择后会填入默认的start script，可以做一些修改。
 - 其他参数设置在配置项说明的做详细阐述。
 

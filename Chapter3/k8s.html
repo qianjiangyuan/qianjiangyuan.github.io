@@ -359,7 +359,7 @@
                 <a href="../Chapter4/">
             
                     
-                    第四章：原理简介
+                    第四章：平台架构
             
                 </a>
             
@@ -387,6 +387,97 @@
             
                     
                     4.2: 集群原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Chapter4/webportal.html">
+            
+                <a href="../Chapter4/webportal.html">
+            
+                    
+                    4.3: WebUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Chapter4/restfulapi.html">
+            
+                <a href="../Chapter4/restfulapi.html">
+            
+                    
+                    4.4: RestfulAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Chapter4/db.html">
+            
+                <a href="../Chapter4/db.html">
+            
+                    
+                    4.5: DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Chapter4/jobmanager.html">
+            
+                <a href="../Chapter4/jobmanager.html">
+            
+                    
+                    4.6: JobManager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Chapter4/k8s.html">
+            
+                <a href="../Chapter4/k8s.html">
+            
+                    
+                    4.7: K8s
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Chapter4/machine.html">
+            
+                <a href="../Chapter4/machine.html">
+            
+                    
+                    4.8: machines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../Chapter4/docker.html">
+            
+                <a href="../Chapter4/docker.html">
+            
+                    
+                    4.9: Docker
             
                 </a>
             
@@ -439,12 +530,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../Chapter5/ldocker.md">
+        <li class="chapter " data-level="1.6.3" data-path="../Chapter5/Docker.html">
             
-                <span>
+                <a href="../Chapter5/Docker.html">
             
                     
-                    5.3: docker相关
+                    5.3: Docker相关
             
                 </a>
             
@@ -489,7 +580,52 @@
                 <a href="../Chapter6/q2.html">
             
                     
-                    6.2: 使用Q&A
+                    6.2:使用Q&A
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    第七章：展望
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Chapter7/feature.html">
+            
+                <a href="../Chapter7/feature.html">
+            
+                    
+                    7.1:功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Chapter7/todo.html">
+            
+                <a href="../Chapter7/todo.html">
+            
+                    
+                    7.2:生态
             
                 </a>
             
@@ -606,15 +742,15 @@ sudo resolvconf -u
 </code></pre><p>&#x7ED9;&#x8282;&#x70B9;&#x5B89;&#x88C5;ubuntu&#x955C;&#x50CF;&#xFF1A;</p>
 <pre><code>./deploy.py runscriptonall ./scripts/prepare_ubuntu.sh
 </code></pre><p>&#x518D;&#x505A;&#x4E00;&#x6B65;&#xFF1A;</p>
-<pre><code>./deploy.py execonall sudo usermod -aG docker core
+<pre><code>./deploy.py execonall sudo usermod -aG Docker core
 </code></pre><p>tips&#xFF1A;</p>
 <ol>
 <li>prepare_ubuntu&#x8FD9;&#x4E00;&#x6B65;&#x4F1A;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#x3002;</li>
 </ol>
 <h4 id="setup-kubernetes">Setup kubernetes</h4>
 <p>&#x62C9;&#x53D6;&#x955C;&#x50CF;</p>
-<pre><code>./deploy.py execonall docker pull dlws/pause-amd64:3.0
-./deploy.py execonall docker tag  dlws/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
+<pre><code>./deploy.py execonall Docker pull dlws/pause-amd64:3.0
+./deploy.py execonall Docker tag  dlws/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
 </code></pre><p>&#x6267;&#x884C;deploy:</p>
 <pre><code>./deploy.py -y deploy
 </code></pre><p>&#x66F4;&#x65B0;k8s&#x7684;workder&#xFF1A;</p>
@@ -667,7 +803,7 @@ sudo resolvconf -u
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3: 搭建kubernetes","level":"1.4.3","depth":2,"next":{"title":"3.4: 处理restfulapi等应用","level":"1.4.4","depth":2,"path":"Chapter3/service.md","ref":"Chapter3/service.md","articles":[]},"previous":{"title":"3.2: 搭建dev-machine","level":"1.4.2","depth":2,"path":"Chapter3/devMachine.md","ref":"Chapter3/devMachine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/k8s.md","mtime":"2019-07-01T01:40:40.027Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T01:44:53.974Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3: 搭建kubernetes","level":"1.4.3","depth":2,"next":{"title":"3.4: 处理restfulapi等应用","level":"1.4.4","depth":2,"path":"Chapter3/service.md","ref":"Chapter3/service.md","articles":[]},"previous":{"title":"3.2: 搭建dev-machine","level":"1.4.2","depth":2,"path":"Chapter3/devMachine.md","ref":"Chapter3/devMachine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/k8s.md","mtime":"2019-07-01T10:23:00.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-02T02:53:16.079Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -675,10 +811,6 @@ sudo resolvconf -u
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
