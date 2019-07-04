@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Chapter5/" />
+    <link rel="next" href="gpuMonitor" />
     
     
     <link rel="prev" href="machine.html" />
@@ -485,6 +485,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.10" data-path="gpuMonitor">
+            
+                <span>
+            
+                    
+                    4.10：集群监控方案
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -719,8 +732,7 @@
 </tbody>
 </table>
 <p><center>&#x5BB9;&#x5668;&#x6280;&#x672F;&#x4E0E;&#x4F20;&#x7EDF;&#x865A;&#x62DF;&#x673A;&#x4F18;&#x52BF;&#x5BF9;&#x6BD4;</center></p>
-<div align="center"><img src="../images/docker.png"></div>
-
+<p><div align="center"><img src="../images/docker.png"></div></p>
 <p><center>docker&#x6784;&#x5EFA;&#x3001;&#x5206;&#x53D1;&#x3001;&#x8FD0;&#x884C;&#x6D41;&#x7A0B;</center>
 &#x200B;            &#x901A;&#x8FC7;&#x7F16;&#x5199;dockerfile&#x6784;&#x5EFA;docker&#x955C;&#x50CF;&#xFF0C;&#x518D;&#x5C06;&#x76F8;&#x5173;&#x955C;&#x50CF;&#x63A8;&#x9001;&#x5230;Docker&#x5B98;&#x65B9;&#x4ED3;&#x5E93;&#x6216;&#x8005;&#x79C1;&#x6709;&#x4ED3;&#x5E93;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x53EA;&#x8981;&#x4ECE;&#x4E91;&#x7AEF;&#x4ED3;&#x5E93;&#x4E2D;&#x62C9;&#x53D6;&#x76EE;&#x6807;&#x955C;&#x50CF;&#x5230;&#x672C;&#x5730;&#x5373;&#x53EF;&#x4E00;&#x952E;&#x90E8;&#x7F72;&#x4F7F;&#x7528;&#x3002;&#x8FD9;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6700;&#x68D2;&#x7684;&#x662F;&#x5E94;&#x7528;&#x6BCF;&#x6B21;&#x90FD;&#x8FD0;&#x884C;&#x5728;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x65E0;&#x9700;&#x62C5;&#x5FC3;&#x4E3B;&#x673A;&#x662F;&#x5426;&#x8FD0;&#x884C;&#x4E86;&#x76F8;&#x5173;&#x73AF;&#x5883;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x5728;&#x955C;&#x50CF;&#x5185;&#x90E8;&#x5B89;&#x88C5;&#x7684;&#x3002;</p>
 <p>&#x200B;        &#x4EE5;&#x94B1;&#x6C5F;&#x6E90;&#x7684;WebUI&#x670D;&#x52A1;&#x4F5C;&#x4E3A;&#x4F8B;&#xFF0C;&#x4EE5;&#x4E0B;Dockerfile&#x63CF;&#x8FF0;&#x4E86;WebUI&#x670D;&#x52A1;&#x6240;&#x9700;&#x8981;&#x751F;&#x6210;&#x7684;&#x73AF;&#x5883;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;Flask,dotnet&#x7B49;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6307;&#x660E;&#x4E86;&#x670D;&#x52A1;&#x7684;&#x5DE5;&#x4F5C;&#x8DEF;&#x5F84;workdir /usr/webPortal,&#x5728;&#x5F00;&#x53D1;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x5E26;build&#x53C2;&#x6570;&#x7684;docker&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x8BED;&#x53E5;&#xFF0C;&#x5C06;&#x751F;&#x6210;&#x5305;&#x542B;&#x6709;WebUI&#x5E94;&#x7528;&#x53CA;&#x5176;&#x4F9D;&#x8D56;&#x7684;&#x76EE;&#x6807;&#x955C;&#x50CF;,&#x5C06;&#x955C;&#x50CF;&#x63A8;&#x9001;&#xFF08;push&#xFF09;&#x5230;&#x79C1;&#x6709;&#x4E91;&#x7AEF;&#x4ED3;&#x5E93;&#x4FDD;&#x5B58;&#x540E;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x8282;&#x70B9;&#x4E0A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x62C9;&#x53D6;&#xFF08;pull&#xFF09;&#x4E91;&#x7AEF;&#x955C;&#x50CF;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x6267;&#x884C;docker run&#x8BED;&#x53E5;&#x6839;&#x636E;&#x955C;&#x50CF;&#x6784;&#x5EFA;docker &#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x3002;</p>
@@ -808,7 +820,7 @@
                 </a>
                 
                 
-                <a href="../Chapter5/" class="navigation navigation-next " aria-label="Next page: 第五章：运维日常">
+                <a href="gpuMonitor" class="navigation navigation-next " aria-label="Next page: 4.10：集群监控方案">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -819,7 +831,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.9: Docker","level":"1.5.9","depth":2,"next":{"title":"第五章：运维日常","level":"1.6","depth":1,"path":"Chapter5/README.md","ref":"Chapter5/README.md","articles":[{"title":"5.1: k8s操作","level":"1.6.1","depth":2,"path":"Chapter5/k8s.md","ref":"Chapter5/k8s.md","articles":[]},{"title":"5.2: linux操作","level":"1.6.2","depth":2,"path":"Chapter5/linux.md","ref":"Chapter5/linux.md","articles":[]},{"title":"5.3: Docker相关","level":"1.6.3","depth":2,"path":"Chapter5/Docker.md","ref":"Chapter5/Docker.md","articles":[]}]},"previous":{"title":"4.8: machines","level":"1.5.8","depth":2,"path":"Chapter4/machine.md","ref":"Chapter4/machine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/docker.md","mtime":"2019-07-02T02:51:37.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-02T02:53:16.079Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.9: Docker","level":"1.5.9","depth":2,"next":{"title":"4.10：集群监控方案","level":"1.5.10","depth":2,"path":"Chapter4/gpuMonitor","ref":"Chapter4/gpuMonitor","articles":[]},"previous":{"title":"4.8: machines","level":"1.5.8","depth":2,"path":"Chapter4/machine.md","ref":"Chapter4/machine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/docker.md","mtime":"2019-07-04T03:05:52.199Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-04T03:21:24.781Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -485,6 +485,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.10" data-path="gpuMonitor">
+            
+                <span>
+            
+                    
+                    4.10：集群监控方案
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -684,10 +697,23 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="45-db">4.5: db</h1>
-<p>db&#x8BBE;&#x8BA1;&#x4E0D;&#x7528;&#x591A;&#x8BB2;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;influxdb&#xFF0C;&#x64CD;&#x4F5C;&#x548C;MySQL&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x94B1;&#x6C5F;&#x6E90;&#x7CFB;&#x7EDF;&#x5C06;job&#x4FE1;&#x606F;&#x3001;&#x96C6;&#x7FA4;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x7B49;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;DLWorkspaceCluster&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E0B;&#x8FDB;&#x5165;Mysql docker&#x5BB9;&#x5668;&#x4EA7;&#x770B;&#x5173;&#x952E;&#x8868;Jobs&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-bash">docker ps
+docker inspect containerid
+<span class="hljs-comment">#&#x5728;&quot;Config&quot;:&quot;Env&quot;:&quot;MYSQL_ROOT_PASSWORD=*******&quot;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x7684;mysql &#x670D;&#x52A1;&#x7684;root&#x5BC6;&#x7801;</span>
+docker <span class="hljs-built_in">exec</span> -it containerid bash
+mysql -uroot -p
+<span class="hljs-comment">#&#x8F93;&#x5165;&#x4E0A;&#x8FF0;&#x5BC6;&#x7801;</span>
+show databases;
+<span class="hljs-comment">#&#x8FDB;&#x5165;DLWorkspaceCluster&#x5E93;&#x4E2D;</span>
+use DLWorkspaceCluster-id
+show tables
+<span class="hljs-comment">#&#x67E5;&#x770B;job&#x8868;&#x6570;&#x636E;</span>
+select * form <span class="hljs-built_in">jobs</span>
+</code></pre>
 <p>&#x8868;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>jobtable</p>
-<pre><code>     `id`        INT          NOT NULL AUTO_INCREMENT,
+<pre><code class="lang-mysql">     `id`        INT          NOT NULL AUTO_INCREMENT,
      `jobId` varchar(50)   NOT NULL,
      `familyToken` varchar(50)   NOT NULL,
      `isParent` INT   NOT NULL,
@@ -710,26 +736,39 @@
      INDEX (`jobTime`),
      INDEX (`jobId`),
      INDEX (`jobStatus`)
-</code></pre><p>clusterstatustable</p>
-<pre><code>     `id`        INT   NOT NULL AUTO_INCREMENT,
+</code></pre>
+<p>jobtable&#x4E2D;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<ul>
+<li>jobName &#xFF1A;&#x6240;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x7684;&#x7C7B;&#x578B;&#x540D;&#xFF0C;&#x5982;pytorch-bert&#x8FD8;&#x662F;tensorflow training</li>
+<li>jobStatus &#xFF1A;&#x6240;&#x8FD0;&#x884C;job&#x7684;&#x72B6;&#x6001;&#x5B57;&#x6BB5;&#xFF0C;filed/killed/error&#x7B49;</li>
+<li>userName : job&#x5F52;&#x5C5E;&#x8D26;&#x53F7;</li>
+<li>jobTime : job&#x521B;&#x5EFA;&#x65F6;&#x95F4;</li>
+</ul>
+<p>clusterstatustable</p>
+<pre><code class="lang-mysql">     `id`        INT   NOT NULL AUTO_INCREMENT,
      `status`         TEXT NOT NULL,
      `time` DATETIME     DEFAULT CURRENT_TIMESTAMP NOT NULL,
      PRIMARY KEY (`id`)
-</code></pre><p>commandtable</p>
-<pre><code>    `id`        INT     NOT NULL AUTO_INCREMENT,
+</code></pre>
+<p>commandtable</p>
+<pre><code class="lang-mysql">    `id`        INT     NOT NULL AUTO_INCREMENT,
     `jobId` varchar(50)   NOT NULL,
     `status`         varchar(255) NOT NULL DEFAULT &apos;pending&apos;,
     `time` DATETIME     DEFAULT CURRENT_TIMESTAMP NOT NULL,
     `command` TEXT NOT NULL, 
     `output` TEXT NULL, 
     PRIMARY KEY (`id`)
-</code></pre><p>usertable</p>
-<pre><code>`id`        INT     NOT NULL AUTO_INCREMENT,
+</code></pre>
+<p>usertable</p>
+<pre><code class="lang-mysql">`id`        INT     NOT NULL AUTO_INCREMENT,
 `username`         varchar(255) NOT NULL,
 `userId`         varchar(255) NOT NULL,
 `time` DATETIME     DEFAULT CURRENT_TIMESTAMP NOT NULL,
 PRIMARY KEY (`id`)
 </code></pre>
+<p>&#x6CE8;&#xFF1A;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#x53CA;&#x903B;&#x8F91;&#x6E05;&#x6670;&#xFF0C;&#x94B1;&#x6C5F;&#x6E90;&#x901A;&#x8FC7;&#x5206;&#x5E93;&#x5206;&#x8868;&#x7684;&#x5F62;&#x5F0F;&#x53E6;&#x5916;&#x4FDD;&#x5B58;&#x7279;&#x6B8A;&#x7528;&#x6237;&#x5982;&#x7BA1;&#x7406;&#x5458;&#x7684;&#x4FE1;&#x606F;&#x3002;AuthorizeUser&#x5E93;&#x7684;&#x4E24;&#x5F20;&#x8868;&#x5B57;&#x6BB5;&#x8BBE;&#x8BA1;&#x5982;&#x4E0B;&#xFF0C;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;</p>
+<p><div align="center"><img src="../images/dbimage2.png"></div></p>
+<center>AuthorizeUser&#x5E93;&#x4E2D;&#x7684;&#x4E24;&#x5F20;&#x8868;</center>
                                 
                                 </section>
                             
@@ -772,7 +811,7 @@ PRIMARY KEY (`id`)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.5: DB","level":"1.5.5","depth":2,"next":{"title":"4.6: JobManager","level":"1.5.6","depth":2,"path":"Chapter4/jobmanager.md","ref":"Chapter4/jobmanager.md","articles":[]},"previous":{"title":"4.4: RestfulAPI","level":"1.5.4","depth":2,"path":"Chapter4/restfulapi.md","ref":"Chapter4/restfulapi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/db.md","mtime":"2019-07-01T10:23:00.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-02T02:53:16.079Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.5: DB","level":"1.5.5","depth":2,"next":{"title":"4.6: JobManager","level":"1.5.6","depth":2,"path":"Chapter4/jobmanager.md","ref":"Chapter4/jobmanager.md","articles":[]},"previous":{"title":"4.4: RestfulAPI","level":"1.5.4","depth":2,"path":"Chapter4/restfulapi.md","ref":"Chapter4/restfulapi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/db.md","mtime":"2019-07-04T02:57:10.401Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-04T03:21:24.781Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
