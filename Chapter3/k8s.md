@@ -147,8 +147,8 @@ tips：
 拉取镜像
 
 ```
-./deploy.py execonall Docker pull dlws/pause-amd64:3.0
-./deploy.py execonall Docker tag  dlws/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
+./deploy.py execonall docker pull dlws/pause-amd64:3.0
+./deploy.py execonall docker tag  dlws/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
 ```
 
 执行deploy:

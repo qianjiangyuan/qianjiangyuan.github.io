@@ -3,7 +3,7 @@
 #### 原理介绍
 
 K8s提供了一系列的API对象，可以通过它们开发、部署容器化的计算任务。
-![图片](https://uploader.shimo.im/f/doFYRoaB0icjwk1h.png!thumbnail)
+![图片](../images/k8s.jpg)
 
 <center>K8s架构图</center>
 
